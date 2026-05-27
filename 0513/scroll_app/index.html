@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>果物人気投票</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="spacer">スクロールしてください ↓</div>
+    <main class="page">
+      <h1>果物人気投票</h1>
+
+      <section class="candidates" id="voteList">
+        <article class="card card-watermelon" data-id="1">
+          <div class="candidate-image">
+            <img src="/images/candidate1.png" alt="スイカ" />
+          </div>
+          <div class="candidate-name">スイカ</div>
+          <div class="votes" aria-live="polite">0票</div>
+          <div class="progress-bar">
+            <div class="bar bar-watermelon"></div>
+          </div>
+          <button class="vote-btn vote-btn-watermelon">投票する</button>
+        </article>
+
+        <article class="card card-mikan" data-id="2">
+          <div class="candidate-image">
+            <img src="/images/candidate2.jpeg" alt="みかん" />
+          </div>
+          <div class="candidate-name">みかん</div>
+          <div class="votes" aria-live="polite">0票</div>
+          <div class="progress-bar">
+            <div class="bar bar-mikan"></div>
+          </div>
+          <button class="vote-btn vote-btn-mikan">投票する</button>
+        </article>
+
+        <article class="card card-apple" data-id="3">
+          <div class="candidate-image">
+            <img src="/images/candidate3.jpeg" alt="りんご" />
+          </div>
+          <div class="candidate-name">りんご</div>
+          <div class="votes" aria-live="polite">0票</div>
+          <div class="progress-bar">
+            <div class="bar bar-apple"></div>
+          </div>
+          <button class="vote-btn vote-btn-apple">投票する</button>
+        </article>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

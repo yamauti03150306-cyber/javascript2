@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="workList"></ul>
+    <script>
+        /// 表示したいデータを配列にまとめている
+            const works = [
+                { title: "バナー制作", category: "graphic" },
+                { title: "LPデザイン", category: "web" },
+                { title: "ポスター制作", category: "graphic" },
+            ];
+
+            // 1件分のデータを li タグの文字列に変換する
+            function createWorkItem(work) {
+                return `<li>${work.title} / ${work.category}</li>`;
+            }
+
+            // 配列全体を受け取って、画面へ表示する
+            function renderWorkList(items) {
+                const target = document.querySelector("#workList");
+                // 1件ずつ createWorkItem() で変換し、1つのHTML文字列にまとめて入れる
+                target.innerHTML = items.map(createWorkItem).join("");
+            }
+
+            // works 配列を渡して、一覧表示を実行する
+            renderWorkList(works);
+     </script>
+</body>
+</html>

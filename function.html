@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //あいさつをする関数
+        // function greet(name) {
+        //         return `こんにちは、${name}さん`;
+        // }
+        //     //関数を実行（関数名()）
+        //     console.log(greet("田中"));
+        //関数式で関数を定義
+        //関数式は、上にないと実行できない
+        //プログラムの特性上そちらの方がわかりやすい
+        //近年は関数式を使うエンジニアが多い
+            //関数式で関数を定義
+
+            //アロー関数
+            const greet = function (name) {
+                    return `こんにちは、${name}さん`;
+                };
+            console.log(greet("大森"));
+
+            //消費税を加えた金額を返す関数の宣言＋引数付き
+            function calcTaxIncluded(price) {
+                    return Math.floor(price * 1.1);
+                }
+
+            //関数の実行がtotal（変数）に代入されています
+                const total = calcTaxIncluded(1200);
+                console.log(total);
+                // 1320
+
+                //amazon Fire TV 4kmax 12980円の三割引がわかる関数宣言して実行してください
+                 const seal =  (price) => {
+                    return Math.floor(price * 0.7);
+                 };
+                 const bargain = seal(12980);
+                 console.log('FireTVのさん割引は${barfain}円です')
+
+                 //中日と渡すと中日ドラゴンズと帰ってくる関数宣言。
+
+                    const team = (name) => {
+                        return `${name}ドラゴンズ`;
+                    };
+
+                    const teamName = team("中日");
+                    console.log(teamName);
+
+                    //配列を取り込みます。
+                    const students=['田中','鈴木','佐藤'];
+
+                    students.forEach((student) => {
+                        console.log(greet(student));
+                    });
+
+
+                    //map()
+                const studentsNames = ["田中", "鈴木", "佐藤"];
+
+                    const studentNames = students.map(function (name) {
+                        //さん付けする
+                        return name + "さん";
+                    });
+
+                    console.log(studentNames);
+                    // ["田中さん", "鈴木さん", "佐藤さん"]
+
+                    console.log(studentsNames);
+                    // ["田中", "鈴木", "佐藤"]
+
+                    const scores = [40, 72, 90, 58];
+
+                        const passedScores = scores.filter((score) => {
+                            return score >= 60;
+                        });
+
+                        console.log(passedScores);
+                        // [72, 90]
+
+                        const numbers = [1, 2, 3];
+
+                    // ここが「別の関数」
+                    // 1件分のデータを受け取って、変換した結果を返す
+                    function doubleNumber(number) {
+                        return number * 2;
+                    }
+
+                    // map() の中で、上で定義した doubleNumber() を使う
+                    const doubledNumbers = numbers.map(doubleNumber);
+
+                    console.log(doubledNumbers);
+                    // [2, 4, 6]
+
+                    const studentName = {
+                            name: "田中",
+                            grade: 2,
+                            course: "Webデザイン",
+                        };
+
+                        console.log(student.name);
+                        // 田中
+
+                        const student = {
+                                name: "田中",
+                                grade: 2,
+                            };
+
+                            function createStudentText(user) {
+                                return `${user.grade}年の${user.name}さん`;
+                            }
+
+                            console.log(createStudentText(student));
+                            // 2年の田中さん
+
+                            // オブジェクトを配列にまとめている
+                                const works = [
+                                    { title: "バナー制作", category: "graphic" },
+                                    { title: "LPデザイン", category: "web" },
+                                    { title: "ポスター制作", category: "graphic" },
+                                ];
+
+                                // 1件分のオブジェクトを、表示用の文字列に変換する関数
+                                function createWorkText(work) {
+                                    return `${work.title}（${work.category}）`;
+                                }
+
+                                // 配列の中身を1件ずつ取り出して、関数で文字列にして表示する
+                                works.forEach((work) => {
+                                    console.log(createWorkText(work));
+                                });
+
+                function runTask(callback) {
+                        console.log("処理を開始します");
+                        callback();
+                    }
+
+                    function showMessage() {
+                        console.log("処理が終わりました");
+                    }
+
+                    runTask(showMessage);
+
+
+
+</script>
+</body>
+</html>

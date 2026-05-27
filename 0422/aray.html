@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配列の操作</title>
+</head>
+<body>
+    <ul id="workList"></ul>
+<script>
+   const works = [
+        { title: "バナー制作", category: "graphic" },
+        { title: "LPデザイン", category: "web" },
+        { title: "ポスター制作", category: "graphic" },
+    ];
+
+    // 1件分のオブジェクトを、表示用の文字列に変換する関数
+    //関数を定義
+    function createWorkText(work) {
+        return `${work.title}（${work.category}）`;
+    }
+
+    // 配列の中身を1件ずつ取り出して、関数で文字列にして表示する
+    //関数を実行
+    works.forEach((work) => {
+        console.log(createWorkText(work));
+    });
+</script>
+</body>
+</html>

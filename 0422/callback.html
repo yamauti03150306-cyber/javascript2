@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コールバっく関数</title>
+</head>
+<body>
+    <script>
+    function runTask(callback) {
+    console.log("処理を開始します");
+    callback();
+    }
+
+    function showMessage() {
+    console.log("処理が終わりました");
+    }
+
+    runTask(showMessage);
+
+    students.forEach((student) => {
+            console.log(student);
+        });
+
+        const button = document.querySelector("#btn");
+
+            button.addEventListener("click", function () {
+                console.log("クリックされました");
+            });
+
+    </script>
+</body>
+</html>
