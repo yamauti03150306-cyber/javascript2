@@ -16,23 +16,49 @@ body {
 
 .spacer {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
   background-color: #ffe66d;
   background-image: linear-gradient(135deg, #ffe66d 0%, #ffb347 50%, #ff6f91 100%);
-  color: #4b2e00;
+  color: #1f2a44;
   font-size: 2.5em;
   font-weight: 500;
   letter-spacing: 0.08em;
-   padding-bottom: 1000px;
 }　
+
+.scroll-message,
+.scroll-arrow {
+  margin: 0;
+  text-align: center;
+}
+
+.scroll-arrow {
+  font-size: 1.25em;
+  line-height: 1;
+  animation: scrollArrowBounce 1.3s ease-in-out infinite;
+}
+
+@keyframes scrollArrowBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 0.75;
+  }
+}
 
 .page {
   max-width: 1100px;
   margin: 32px auto 48px;
   padding: 28px 24px 36px;
-  background-color: #ffe66d;
-  background-image: linear-gradient(135deg, #ffe66d 0%, #ffb347 50%, #ff6f91 100%);
+  background: transparent;
   border-radius: 16px;
 }
 
@@ -189,4 +215,44 @@ img {
 
 img:hover {
   transform: scale(1.05) rotate(-5deg);
+}
+
+.fade-target {
+  display: grid;
+  place-items: center;
+  min-height: 60vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.fade-target-content {
+  max-width: 760px;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.fade-target h2 {
+  margin: 0 0 0.75rem;
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-target h2.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-target p {
+  margin: 0;
+  color: #555;
+}
+
+.scroll-end {
+  margin: 0 0 2.5rem;
+  text-align: center;
+  color: #2f2f2f;
+  font-weight: 700;
 }

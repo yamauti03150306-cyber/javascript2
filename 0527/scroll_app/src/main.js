@@ -1,29 +1,18 @@
-import "./style.css";
-import { inView, animate, stagger, scroll } from "motion";
+// import "./style.css";                                  ← 変更なし
+// import { vote, getRates } from "./candidates.js";       ← 既存
 
-inView(".fade-target h2", (element) => {
-  animate(element, { opacity: [0, 1], y: [40, 0] }, { duration: 1 });
+// ⬇ resetCandidates も追加で import
+import { vote, getRates, resetCandidates } from "./candidates.js";
+
+// 既存の click ハンドラ・animateBars 等 ← 変更なし
+
+// ⬇ 末尾に追加
+const resetButton = document.querySelector("#resetBtn");
+resetButton.addEventListener("click", () => {
+  if (!confirm("票数をリセットしますか？")) return;
+  resetCandidates();
+  animateBars();          // ← リセット後にバーも初期状態へ戻す
 });
 
-inView(".cards", () => {
-  animate(
-    ".card",
-    { opacity: [0, 1], y: [40, 0] },
-    { duration: 0.5, delay: stagger(0.5) },
-  );
-});
-
-scroll(animate(".progress-bar", { scaleX: [0, 1] }));
-
-scroll(
-  animate(".hero-title", { opacity: [1, 0], y: [0, -100] }),
-  {
-    target: document.querySelector(".hero"),
-    offset: ["start 0.3", "start 0"],
-  },
-);
-
-scroll(
-  animate(".parallax-bg", { y: [0, -500] }),
-  { target: document.querySelector(".parallax-section") },
-);
+// ⬇ 末尾に追加：起動時に、読み込んだ得票率でバーを描画する
+animateBars();

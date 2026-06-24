@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Storage</title>
+</head>
+
+<body>
+    <h1>Local Storage</h1>
+    <script>
+        localStorage.setItem("count", 5);
+        //Local Storageを介すと数値は文字列に変わる。
+        const count = localStorage.getItem("count"); // '5'（文字列）
+        console.log(count + 1); // '51' ← 文字列連結になってしまう
+        console.log(Number(count) + 1); // 6
+
+        //要素がオブジェクトの配列
+        const candidates = [
+            { id: 1, name: "A", votes: 0 },
+            { id: 2, name: "B", votes: 3 },
+        ];
+
+        // 保存（オブジェクト → 文字列）
+        // 第1引数は、キー。第2引数は値
+        // キーと値のオブジェクトの記法なんだけど、キーと値は必ず""で囲む。
+        localStorage.setItem("candidates", JSON.stringify(candidates));
+
+        // 取得（文字列 → オブジェクト）
+        // Local Storageからは文字列になるので、JSONに変換してあげないと取り扱えない。
+        // 配列になっている。
+        const data = JSON.parse(localStorage.getItem("candidates"));
+        console.log(data[1].votes); // 3
+
+        const saved = localStorage.getItem("candidates");
+        const initialCandidates = console.log("値がありません");
+        //値がなければnull=falseなので、initialCandidates（初期設定）
+        //三項（条件）演算子 savedの値がtrueだったら、:の前、falseだったら:の後
+        const candidates2 = saved ? JSON.parse(saved) : initialCandidates;
+    </script>
+</body>
+
+</html>

@@ -63,13 +63,45 @@ const setupEntryAnimation = () => {
 
     hasPlayed = true
     animate(
-      '.card',
-      { opacity: [0, 1], y: [40, 0] },
-      { duration: 0.5, delay: stagger(0.1), easing: 'ease-out' }
+      '.card-watermelon',
+      { opacity: [0, 1], y: [52, 0] },
+      { duration: 1.4, easing: 'ease-in-out' }
+    )
+    animate(
+      '.card-mikan',
+      { opacity: [0, 1], y: [52, 0] },
+      { duration: 1.4, delay: 0.2, easing: 'ease-in-out' }
+    )
+    animate(
+      '.card-apple',
+      { opacity: [0, 1], y: [52, 0] },
+      { duration: 1.4, delay: 0.4, easing: 'ease-in-out' }
     )
   })
 }
 
+const setupFadeInOnScroll = () => {
+  const target = document.querySelector('.fade-target h2')
+  if (!target) {
+    return
+  }
+
+  const handleIntersect = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible')
+        observer.unobserve(entry.target)
+      }
+    })
+  }
+
+  const observer = new IntersectionObserver(handleIntersect, {
+    threshold: 0.35,
+  })
+  observer.observe(target)
+}
+
 setupEntryAnimation()
+setupFadeInOnScroll()
 setupVoteButtons()
 refreshUI()

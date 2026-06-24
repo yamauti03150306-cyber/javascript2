@@ -1,0 +1,72 @@
+body {
+  font-family: sans-serif;
+  padding: 24px;
+  max-width: 480px;
+  margin: 0 auto;
+  background-color: #C5E8A8;
+  font-weight: bold;
+  font-family: "Kozuka Gothic Pro", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.search input {
+  flex: 1;
+  padding: 8px;
+}
+
+.error {
+  color: tomato;
+}
+
+.card {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #D4F1D9;
+}
+
+.card img {
+  width: 100%;
+  image-rendering: pixelated;
+  background-color: #D4F1D9;
+  animation: floatY 2.4s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card img {
+    animation: none;
+  }
+}
+
+.loader:not([hidden]) {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #eee;
+  border-top-color: #4caf50;
+  border-radius: 50%;
+}
+
+.app{
+    text-align: center;
+}

@@ -1,0 +1,20 @@
+{
+  "normal": {"bg": "#A8A878", "text": "#ffffff", "border": "#6D6D5C"},
+  "fighting": {"bg": "#C03028", "text": "#ffffff", "border": "#7D1F1A"},
+  "flying": {"bg": "#A890F0", "text": "#ffffff", "border": "#6B5FB3"},
+  "poison": {"bg": "#A040A0", "text": "#ffffff", "border": "#682A82"},
+  "ground": {"bg": "#E0C068", "text": "#333333", "border": "#A89860"},
+  "rock": {"bg": "#B8A038", "text": "#ffffff", "border": "#8B7830"},
+  "bug": {"bg": "#A8B820", "text": "#ffffff", "border": "#785410"},
+  "ghost": {"bg": "#705898", "text": "#ffffff", "border": "#493963"},
+  "steel": {"bg": "#B8B8D0", "text": "#333333", "border": "#8A8AA0"},
+  "fire": {"bg": "#F08030", "text": "#ffffff", "border": "#B85C1C"},
+  "water": {"bg": "#6890F0", "text": "#ffffff", "border": "#445E9C"},
+  "grass": {"bg": "#78C850", "text": "#ffffff", "border": "#5FA038"},
+  "electric": {"bg": "#F8D030", "text": "#333333", "border": "#C8A800"},
+  "psychic": {"bg": "#F85888", "text": "#ffffff", "border": "#D21C3C"},
+  "ice": {"bg": "#98D8D8", "text": "#333333", "border": "#78A8A8"},
+  "dragon": {"bg": "#7038F8", "text": "#ffffff", "border": "#5828BC"},
+  "dark": {"bg": "#705848", "text": "#ffffff", "border": "#49392F"},
+  "fairy": {"bg": "#EE99AC", "text": "#333333", "border": "#C85A8C"}
+}

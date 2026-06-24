@@ -12,7 +12,10 @@
     />
   </head>
   <body>
-    <div class="spacer">スクロールしてください ↓</div>
+    <div class="spacer">
+      <p class="scroll-message">スクロールしてください</p>
+      <p class="scroll-arrow">↓</p>
+    </div>
     <main class="page">
       <h1>果物人気投票</h1>
 
@@ -54,6 +57,15 @@
         </article>
       </section>
     </main>
+
+    <section class="fade-target">
+      <div class="fade-target-content">
+        <h2>このセクションが画面に入ったらフェードインする</h2>
+        <p>スクロールしてここまで来ると表示されます。</p>
+      </div>
+    </section>
+
+    <p class="scroll-end">↑ ここまでスクロールできます</p>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
